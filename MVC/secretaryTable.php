@@ -15,7 +15,7 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 </head>
 
 <body>
-<p>已申請學生申請資料 </p>
+<p>通過"教師審核"之學生申請資料 </p>
 <hr />
 <hr>
 <table width="800" border="2">
