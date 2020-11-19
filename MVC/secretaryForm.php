@@ -6,19 +6,18 @@ require("dbconnect.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件</title>
+<title>secretary</title>
 </head>
 <body>
-<h1>Teacher Page</h1>
-<form method="post" action="teacherAdd.php">
+<h1>Secretary Page</h1>
+<form method="post" action="secretaryAdd.php">
 
-      teacher comment: <input name="teacher_comment" type="text" id="teacher_comment" /> <br>
-	  
-	  teacher status: <input type="radio" name="teacher_status" value="0" checked> 審核通過
-					  <input type="radio" name="teacher_status" value="1"> 審核失敗
-	  
-	  <br>
-
+    secretary_status:<input type="radio" name="secretary_status" value="0" checked> 審核通過
+                     <input type="radio" name="secretary_status" value="1"> 審核失敗<br>
+                     
+    secretary_result:"審核通過"准許補助: $<input name="secretary_result" type="text" id="secretary_result" /> <br>
+    secretary_comment: <input name="secretary_comment" type="text" id="secretary_comment" /> <br>
+    
       <input type="submit" name="Submit" value="送出" />
 	</form>
   </tr>
