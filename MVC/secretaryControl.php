@@ -1,5 +1,5 @@
 <?php
-require("studentModel.php");
+require("secretaryModel.php");
 if (! isset($_SESSION['uID']) or $_SESSION['uID'] <= "") { //uID未定義(沒有登入) 或 內容為空
 	header("Location: loginForm.php"); //要求登入
 }

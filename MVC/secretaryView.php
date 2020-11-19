@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("studentModel.php");
+require("secretaryModel.php");
 /*if (!isset($_SESSION['uID']) or $_SESSION['uID'] <= "") { //uID未定義(沒有登入) 或 內容為空
     header("Location: loginForm.php"); //要求登入
 }
@@ -15,10 +15,11 @@ if (isset($_GET['m'])) {
  }
 
 
-$stuMode='student';
-$result = getJobList($stuMode); //取得工作清單
-$jobStatus = array('未完成', '已完成', '已結案', '已取消');
-*/
+$stuMode='student';*/
+/*$secretaryMode='secretary';
+$result = getJobList($secretaryMode); //取得工作清單
+$jobStatus = array('未完成', '已完成', '已結案', '已取消');*/
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +33,7 @@ $jobStatus = array('未完成', '已完成', '已結案', '已取消');
 
     <p>my Todo List !! </p>
     <hr />
-    <div><?php echo $msg; ?></div>
+    <div><?php /*echo $msg;*/ ?></div>
     <hr>
     <a href="todoForm.php">login</a> | <a href="todoAddForm.php?id=-1">Add Task</a> <br>
     <table width="200" border="1">
