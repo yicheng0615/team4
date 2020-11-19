@@ -11,6 +11,7 @@ function checkUserIDPwd($userName, $passWord) {
 		if ($row=mysqli_fetch_assoc($result)) {
 			if ($row['student_pwd'] == $passWord) {
 				$_SESSION['uID'] = $row['student_name'];
+				$_SESSION['stuID']=$student_id;
 				$isValid = true;
 			}
 		}
