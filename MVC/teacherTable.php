@@ -9,7 +9,7 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>無標題文件</title>
+    <title>Teacher Table</title>
 </head>
 
 <body>

@@ -2,8 +2,6 @@
 session_start();
 require("dbconnect.php");
 $sql = "select student.id,student.student_id,student.student_dad,student_mom,student.money_type,teacher.teacher_comment,teacher.teacher_status from student,teacher where student.student_id=teacher.student_id;" ;
-//$sql = "select * from student;" ;
-//$sql = "select teacher_comment,teacher_status from teacher;" ;
 $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
