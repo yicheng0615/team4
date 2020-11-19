@@ -10,7 +10,7 @@ $secretary_result=mysqli_real_escape_string($conn,$_POST['secretary_result']);
 	//mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
 	//echo "Message added";
 //} else {
-	teacherAdd($secretary_status,$secretary_comment,$secretary_result);
+	secretaryAdd($secretary_status,$secretary_comment,$secretary_result);
 //}
 
 header("Location: secretaryTable.php");
