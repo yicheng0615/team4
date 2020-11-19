@@ -2,8 +2,8 @@
 session_start();
 require("userModel.php");
 
-$userName = $_POST['id'];
-$passWord = $_POST['pwd'];
+$userName = $_POST['student_name'];
+$passWord = $_POST['student_pwd'];
 
 if (checkUserIDPwd($userName, $passWord)) {
     $_SESSION['uID']=$userName;

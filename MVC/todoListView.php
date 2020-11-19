@@ -3,21 +3,19 @@ session_start();
 if (!isset($_SESSION['uID']) or $_SESSION['uID'] <= "") { //uID未定義(沒有登入) 或 內容為空
     header("Location: loginForm.php"); //要求登入
 }
-if ($_SESSION['uID'] == 'boss') { //設定權限
-    $bossMode = 1; //是老闆
-} else {
-    $bossMode = 0; //不是
-}
-require("todoModel.php"); //引入model
-if (isset($_GET['m'])) {
-    $msg = "<font color='red'>" . $_GET['m'] . "</font>";
-} else {
-    $msg = "Good morning";
-}
+// if ($_SESSION['uID'] == 'student') { //設定權限
+//     $stuMode = 1; //是老闆
+// }
+// require("todoModel.php"); //引入model
+// if (isset($_GET['m'])) {
+//     $msg = "<font color='red'>" . $_GET['m'] . "</font>";
+// } else {
+//     $msg = "Good morning";
+// }
 
 
-
-$result = getJobList($bossMode); //取得工作清單
+$stuMode='student';
+$result = getJobList($stuMode); //取得工作清單
 $jobStatus = array('未完成', '已完成', '已結案', '已取消');
 
 

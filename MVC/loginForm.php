@@ -6,8 +6,8 @@ $_SESSION['uID']=""; //定義session變數
 <h1>Login Form</h1>
 <hr>
 <form method="post" action="loginCheck.php" >
-User Name: <input type="text" name="id"><br>
-Password: <input type="password" name="pwd"><br>
+User Name: <input type="text" name="student_name"><br>
+Password: <input type="password" name="student_pwd"><br>
 <input type="submit">
 </form>
 <a href="getUserPassword.php">Tell me Password</a>
