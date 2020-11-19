@@ -3,10 +3,10 @@
 // status=1 finished
 // status=2 close
 require_once("dbconnect.php"); //不會重複一直被require 適用於常常會被require的檔案
-function addJob($stuID,$mom,$dad,$money_type)
+function addJob($title, $msg, $urgent)
 {
     global $conn;
-    $sql = "insert into student (`student_id`, `student_mom`, `student_dad`, `money_type`) values ('$stuID','$mom', '$dad','$money_type');";
+    $sql = "INSERT into todo(title,content,urgent,addTime) values('$title','$msg','$urgent',NOW());";
     mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
 }
 
@@ -18,7 +18,6 @@ function cancelJob($jobID)
     //status不能為2
     mysqli_query($conn, $sql);
 }
-
 
 function updateJob($id, $title, $msg, $urgent)
 {
@@ -36,15 +35,6 @@ function getJobList($bossMode)
     global $conn; #取得DBconnect.php中定義的連線參數
     if ($bossMode == "student") { #判斷權限
         $sql = "select * from student order by student_id desc;";
-    }
-    $result = mysqli_query($conn, $sql) or die("DB Error: Cannot retrieve message.");
-    return $result;
-}
-function getStatusList($bossMode,$stuID)
-{
-    global $conn; #取得DBconnect.php中定義的連線參數
-    if ($bossMode == "student") { #判斷權限
-        $sql = "select teacher_status,secretary_status from teacher,secretary,principle WHERE student_id=$stuID;";
     }
     $result = mysqli_query($conn, $sql) or die("DB Error: Cannot retrieve message.");
     return $result;
