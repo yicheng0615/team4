@@ -6,17 +6,18 @@ require("dbconnect.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件</title>
+<title>學生申請單</title>
 </head>
 <body>
 <h1>Add New Task</h1>
 <form method="post" action="studentAddControl.php">
 
-      mom: <input name="mom" type="text" id="mom" /> <br>
+      student id : <input name="id" type="text" id="id" /> <br>
+      mom name :   <input name="mom" type="text" id="mom" /> <br>
 
-      dad: <input name="dad" type="text" id="dad" /> <br>
+      dad name :   <input name="dad" type="text" id="dad" /> <br>
 	  
-	  type: <select  name="money_type" type="select" id="money_type" /> 
+	  type :        <select  name="money_type" type="select" id="money_type" /> 
 					<option value='低收入戶'>低收入戶</option>
 					<option value='中低收入戶'>中低收入戶</option>
 					<option value='家庭突發因素'>家庭突發因素</option>

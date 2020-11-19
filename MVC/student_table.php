@@ -28,7 +28,7 @@ $status=getStatusList($stuMode,$_SESSION['stuID']);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>無標題文件</title>
+    <title>Student table</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $status=getStatusList($stuMode,$_SESSION['stuID']);
     <p>my Todo List !! </p>
     <hr />
     <hr>
-    <a href="student_form.php?id=-1">Add Task</a> <br>
+    <a href="student_form.php?id=-1">新增申請單</a> <br>
     <table width="200" border="1">
         <tr>
             <td>id</td>
