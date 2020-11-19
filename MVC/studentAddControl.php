@@ -8,7 +8,7 @@ $student_id=mysqli_real_escape_string($conn,$_POST['student_id']);
 $mom=mysqli_real_escape_string($conn,$_POST['mom']);
 $dad=mysqli_real_escape_string($conn,$_POST['dad']);
 $money_type=mysqli_real_escape_string($conn,$_POST['money_type']);
-addJob($student_id,$mom,$dad,$money_type);
+studentAdd($student_id,$mom,$dad,$money_type);
 $msg="Message updateded";
 header("Location: student_table.php?m=$msg");
 ?>

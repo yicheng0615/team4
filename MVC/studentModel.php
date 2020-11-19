@@ -3,6 +3,32 @@
 // status=1 finished
 // status=2 close
 require_once("dbconnect.php"); //不會重複一直被require 適用於常常會被require的檔案
+
+function studentAdd($student_id,$mom,$dad,$money_type)
+{
+    global $conn;
+    $sql = "INSERT into student(student_id,mom,dad,money_type) values($student_id,$mom,$dad,$money_type);";
+    mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
+}
+/*function teacherAdd($teacher_comment, $teacher_status)
+{
+    global $conn;
+    $sql = "INSERT into teacher(teacher_comment,teacher_status) values('$teacher_comment','$teacher_status');";
+    mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
+}
+function secretaryAdd($secretary_status,$secretary_comment,$secretary_result)
+{
+    global $conn;
+    $sql = "INSERT into secretary(secretary_status,ecretary_comment,secretary_result) values('$secretary_status','$secretary_comment','$secretary_result');";
+    mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
+}
+function principleAdd($principle_status)
+{
+    global $conn;
+    $sql = "INSERT into principle($principle_status) values('$principle_status');";
+    mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
+}*/
+
 function addJob($title, $msg, $urgent)
 {
     global $conn;
