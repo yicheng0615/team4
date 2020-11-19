@@ -16,9 +16,9 @@ if (isset($_GET['m'])) {
 
 
 $stuMode='student';*/
-/*$secretaryMode='secretary';
+$secretaryMode='secretaryMode';
 $result = getJobList($secretaryMode); //取得工作清單
-$jobStatus = array('未完成', '已完成', '已結案', '已取消');*/
+/*$jobStatus = array('未完成', '已完成', '已結案', '已取消');*/
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

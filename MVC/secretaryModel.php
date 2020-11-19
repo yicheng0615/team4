@@ -19,6 +19,7 @@ function cancelJob($jobID)
     mysqli_query($conn, $sql);
 }
 */
+/*
 function updateSecretary($id, $student_id, $secretary_comment, $secretary_status,$secretary_result)
 {
     global $conn;
@@ -29,15 +30,15 @@ function updateSecretary($id, $student_id, $secretary_comment, $secretary_status
         mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
     }
 }
-
+*/
 function getJobList($secretaryMode)
 {
     global $conn; #取得DBconnect.php中定義的連線參數
-    if ($secretaryMode) { #判斷權限
+    /*if ($secretaryMode) { #判斷權限*/
         $sql = "select *,  from secretary;";
-    } else {
+    /*} else {
         $sql = "select *, from secretary where status = 0;";
-    }
+    }*/
     $result = mysqli_query($conn, $sql) or die("DB Error: Cannot retrieve message.");
     return $result;
 }
