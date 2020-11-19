@@ -1,6 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['uID']) or $_SESSION['uID'] <= "") { //uID未定義(沒有登入) 或 內容為空
+require("dbconnect.php");
+$sql = "select * from student;" ;
+$result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
+/*if (!isset($_SESSION['uID']) or $_SESSION['uID'] <= "") { //uID未定義(沒有登入) 或 內容為空
     header("Location: loginForm.php"); //要求登入
 }
 // if ($_SESSION['uID'] == 'student') { //設定權限
@@ -12,14 +15,13 @@ require("todoModel.php"); //引入model
 // } else {
 //     $msg = "Good morning";
 // }
-
-
+*/
+/*
 $stuMode='student';
 $result = getJobList($stuMode); //取得工作清單
 $status=getStatusList($stuMode,$_SESSION['stuID']);
 // $jobStatus = array('未完成', '已完成', '已結案', '已取消');
-
-
+*/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
