@@ -1,10 +1,11 @@
 <?php
 session_start();
-require("dbconnect.php");
+if (! isset($_SESSION['uID']) or $_SESSION['uID'] <= "") { //uID未定義(沒有登入) 或 內容為空
+	header("Location: loginForm.php"); //要求登入
+}
+require("todoModel.php");
 $id = (int)$_GET['id'];
-$sql = "select * from todo where id = $id;";
-$result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
-$rs=mysqli_fetch_assoc($result);
+$rs=getJobDetail($id);
 if (! $rs) {
 	echo "no data found";
 	exit(0);
@@ -19,13 +20,13 @@ if (! $rs) {
 </head>
 <body>
 <h1>Edit Task</h1>
-<form method="post" action="todoUpdate.php">
+<form method="post" action="todoUpdControl.php">
 
 	  <input type='hidden' name='id' value='<?php echo $id ?>'>
 
-      task title: <input name="title" type="text" id="title" value="<?php echo htmlspecialchars($rs['title']);?>" /> <br>
+      task title: <input name="title" type="text" id="title" value="<?php echo $rs['title'];?>" /> <br>
 
-      task description: <input name="msg" type="text" id="msg" value="<?php echo htmlspecialchars($rs['content']);?>" /> <br>
+      task description: <input name="msg" type="text" id="msg" value="<?php echo $rs['content']?>" /> <br>
 
 	  Urgent Level: <select  name="urgent" type="select" id="urgent" /> 
 				<?php

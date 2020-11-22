@@ -1,16 +1,17 @@
 <?php
 require("dbconnect.php");
 
-function checkUserIDPwd($userName, $passWord) {
+function checkUserIDPwd($userName, $passWord)
+{
 	global $conn;
-	$userName = mysqli_real_escape_string($conn,$userName);
+	$userName = mysqli_real_escape_string($conn, $userName);
 	$isValid = false;
 
-	$sql = "SELECT student_pwd, student_name FROM student_data WHERE student_name='$userName'";
-	if ($result = mysqli_query($conn,$sql)) {
-		if ($row=mysqli_fetch_assoc($result)) {
+	$sql = "SELECT student_id,student_pwd, student_name FROM student_data WHERE student_name='$userName'";
+	if ($result = mysqli_query($conn, $sql)) {
+		if ($row = mysqli_fetch_assoc($result)) {
 			if ($row['student_pwd'] == $passWord) {
-				$isValid = $row['student_name'];
+				$isValid = $row['student_id'];
 			}
 		}
 	}
@@ -18,13 +19,15 @@ function checkUserIDPwd($userName, $passWord) {
 }
 
 
-function getUserPwd() {
+function getUserPwd()
+{
 	global $conn;
-	$sql="SELECT * FROM student_data;";
-	$result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
+	$sql = "SELECT * FROM student_data;";
+	$result = mysqli_query($conn, $sql) or die("DB Error: Cannot retrieve message.");
 	return $result;
 }
 
-function setUserPassword($userName){
-		return false;
+function setUserPassword($userName)
+{
+	return false;
 }
