@@ -10,9 +10,7 @@ function checkUserIDPwd($userName, $passWord) {
 	if ($result = mysqli_query($conn,$sql)) {
 		if ($row=mysqli_fetch_assoc($result)) {
 			if ($row['student_pwd'] == $passWord) {
-				$_SESSION['uID'] = $row['student_name'];
-				$_SESSION['stuID']=$student_id;
-				$isValid = true;
+				$isValid = $row['student_name'];
 			}
 		}
 	}
