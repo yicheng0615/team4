@@ -14,10 +14,11 @@ require("dbconnect.php");
 
       teacher comment: <input name="teacher_comment" type="text" id="teacher_comment" /> <br>
 	  
-	  teacher status: <input type="radio" name="teacher_status" value="0" checked> 審核通過
-					  <input type="radio" name="teacher_status" value="1"> 審核失敗
+	  teacher status: <input type="radio" name="teacher_status" value="1" checked> 審核通過
+					  <input type="radio" name="teacher_status" value="0"> 審核失敗
 	  
 	  <br>
+	  <input type="hidden" name="teacher_id" value="<?php echo $_GET['id'];?>">
 
       <input type="submit" name="Submit" value="送出" />
 	</form>

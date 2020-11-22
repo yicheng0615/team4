@@ -9,23 +9,22 @@ function studentAdd($student_id, $mom, $dad, $money_type)
     $get_last_id = "SELECT LAST_INSERT_ID() as last_id;";
     $last_id = mysqli_fetch_assoc(mysqli_query($conn, $get_last_id));
     $last_id = $last_id['last_id'];
-    $last_id=(int)$last_id;
+    $last_id = (int)$last_id;
     //一同新增去其他表格
     $other_table = "INSERT into teacher(`student_id`,`teacher_status`)values($last_id,0)";
     mysqli_query($conn, $other_table);
-    $other_table ="INSERT into secretary(`student_id`,`secretary_status`)values($last_id,0)";
+    $other_table = "INSERT into secretary(`student_id`,`secretary_status`)values($last_id,0)";
     mysqli_query($conn, $other_table);
-    $other_table ="INSERT into principle(`student_id`,`principle_status`)values($last_id,0)";
+    $other_table = "INSERT into principle(`student_id`,`principle_status`)values($last_id,0)";
     mysqli_query($conn, $other_table);
-    
 }
-/*function teacherAdd($teacher_comment, $teacher_status)
+function teacherAdd($teacher_comment, $teacher_status, $tid)
 {
     global $conn;
-    $sql = "INSERT into teacher(teacher_comment,teacher_status) values('$teacher_comment','$teacher_status');";
+    $sql = "UPDATE teacher SET `teacher_status` = $teacher_status ,`teacher_comment`='$teacher_comment' WHERE `id`=$tid;";
     mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
 }
-function secretaryAdd($secretary_status,$secretary_comment,$secretary_result)
+/*function secretaryAdd($secretary_status,$secretary_comment,$secretary_result)
 {
     global $conn;
     $sql = "INSERT into secretary(secretary_status,ecretary_comment,secretary_result) values('$secretary_status','$secretary_comment','$secretary_result');";
@@ -52,6 +51,12 @@ function getStudentList($mode)
         AND secretary.student_id = teacher.student_id
         AND principle.student_id = secretary.student_id";
         // AND student.student_id = $mode 多位student
+        return mysqli_query($conn, $sql);
+    } elseif ($mode == 1) {
+        $sql = "SELECT `student`.`student_id`,`student`.`student_mom`,`student`.`student_dad`,`student`.`money_type`,
+        `teacher`.`teacher_status`,`teacher`.`id`,`teacher`.`teacher_comment`
+        from student,teacher
+        where student.id = teacher.student_id";
         return mysqli_query($conn, $sql);
     }
 }

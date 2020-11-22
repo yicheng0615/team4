@@ -35,7 +35,7 @@ $status=getStatusList($stuMode,$_SESSION['stuID']);
     <a href="student_form.php?uID=<?php $_SESSION['uID'] ?>">新增申請單</a> <br>
     <table width="700" border="1">
         <tr>
-            <td>id</td>
+            <td>student id</td>
             <td>mom</td>
             <td>dad</td>
             <td>type</td>
