@@ -26,6 +26,7 @@ $status=getStatusList($stuMode,$_SESSION['stuID']);
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Student table</title>
+
 </head>
 
 <body>
@@ -46,6 +47,7 @@ $status=getStatusList($stuMode,$_SESSION['stuID']);
         <?php
 
         while ($rs = mysqli_fetch_assoc($result)) {
+
             echo "<tr><td>" . $rs['id'] . "</td>";
             echo "<td>", htmlspecialchars($rs['student_mom']), "</td>";
             echo "<td>", htmlspecialchars($rs['student_dad']), "</td>";

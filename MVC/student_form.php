@@ -1,6 +1,8 @@
 <?php
 session_start();
 require("dbconnect.php");
+require("studentModel.php"); //引入model
+$result = getStudentName($_SESSION['uID']);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,7 +13,8 @@ require("dbconnect.php");
 <body>
 <h1>Add New Task</h1>
 <form method="post" action="studentAddControl.php">
-
+<?php while ($rs = mysqli_fetch_assoc($result)) {?>
+	  student name: <input name="student_name" type="text" value="<?php echo $rs['student_name'] ;}?>" /> <br>
       mom name :   <input name="mom" type="text" id="mom" /> <br>
 
       dad name :   <input name="dad" type="text" id="dad" /> <br>

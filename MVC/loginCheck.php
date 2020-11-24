@@ -12,7 +12,7 @@ if (checkUserIDPwd($userName, $passWord)) {
     //$_SESSION['uID']=student_id=3 principle
     //$_SESSION['uID']=student_id=4 student
     //依權限導至不同畫面
-    if($_SESSION['uID'] == "4"){
+    if($_SESSION['uID'] >= "4"){
         header("Location: student_table.php",$_SESSION['uID']); 
     }
     elseif($_SESSION['uID'] == "1"){

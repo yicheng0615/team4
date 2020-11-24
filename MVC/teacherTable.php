@@ -20,7 +20,7 @@ $result = getStudentList($_SESSION['uID']);
 <hr>
 <table width="800" border="2">
   <tr>
-    <td>id</td>
+    <td>name</td>
     <td>student_id</td>
     <td>student Dad</td>
     <td>student Mom</td>
@@ -31,7 +31,7 @@ $result = getStudentList($_SESSION['uID']);
   </tr>
 <?php
 while (	$rs=mysqli_fetch_assoc($result)) {
-	echo "<tr><td>" . $rs['id'] . "</td>";
+	echo "<tr><td>" . $rs['student_name'] . "</td>";
 	echo "<td>{$rs['student_id']}</td>";
 	echo "<td>" , $rs['student_dad'];
 	echo "<td>" , $rs['student_mom'];
